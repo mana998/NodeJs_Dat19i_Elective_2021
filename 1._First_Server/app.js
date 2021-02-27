@@ -1,6 +1,7 @@
 const express = require("express");
 //instantiate library
 const app = express();
+// const app = require("express")();
 
 class Member {
     constructor(id, name, username, age) {
@@ -28,6 +29,27 @@ app.get("/members/:memberId", (req, res) => {
     }});
     res.send(members[pos] ? members[pos] : {message: `No member found with id ${id}`});
 });
+
+
+
+
+/*
+//event handler, route handler, route
+//endpoint, callback
+app.get("/", (req, res) => {
+    res.send({});
+})
+
+//new route called welcome that shows an HTML header tag that says Welcome
+app.get("/welcome", (req, res) => {
+    res.send("<h1>Welcome</h1>");
+})
+
+//create a new route on the endpoint me that returns a json object that represents you
+app.get("/me", (req, res) => {
+    res.send({name:"Marianna",age:"22"});
+})
+*/
 
 //start server on port
 app.listen(8080);
