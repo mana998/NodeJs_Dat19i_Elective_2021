@@ -2,6 +2,7 @@ const express = require("express");
 //instantiate library
 const app = express();
 // const app = require("express")();
+app.use(express.json());
 
 class Member {
     constructor(id, name, username, age) {
@@ -15,6 +16,15 @@ class Member {
 //array of member objects
 let members = [new Member(1, "Emilie", "Stray Mylse", 20), new Member(2, "Salia", "Yukina Peace", 20), new Member(3, "Estelle", "Inoel", 18), new Member (4, "Yuki", "ShadedStar", 26)];
 
+//get member by id
+function getMemberPos(id) {
+    for (member of members) {
+        if (member.id == id){
+            return members.indexOf(member);
+        }
+    }
+}
+
 //get all
 app.get("/members", (req, res) => {
     res.send(members);
@@ -23,15 +33,72 @@ app.get("/members", (req, res) => {
 //get by id
 app.get("/members/:memberId", (req, res) => {
     let id = req.params.memberId;
-    let pos;
-    members.forEach( member => {if (member.id == id){
-        pos = members.indexOf(member);
-    }});
+    let pos = getMemberPos(id);
     res.send(members[pos] ? members[pos] : {message: `No member found with id ${id}`});
 });
 
+//post
+app.post("/members", (req, res) => {
+    let body = req.body;
+    let member = new Member(members.length+1, body.name, body.username, body.age);
+    members.push(member);
+    console.log(members);
+    res.send({messsage: "Member has been added"});
+})
 
+//put
+app.put("/members/:memberId", (req, res) => {
+    let body = req.body;
+    let id = req.params.memberId;
+    let pos = getMemberPos(id);
+    if (pos !== undefined) {;
+        let member = members[pos];
+        member.name = body.name;
+        member.username = body.username;
+        member.age = body.age;
+        console.log(members);
+        res.send({messsage: `Member with id ${id} has been updated`});
+    } else {
+        res.send({messsage: `Member with id ${id} not found`});
+    }
+})
 
+app.patch("/members/:memberId", (req, res) => {
+    let body = req.body;
+    let id = req.params.memberId;
+    let pos = getMemberPos(id);
+    if (pos !== undefined) {;
+        let member = members[pos];
+        if (body.name) member.name = body.name;
+        if (body.username) member.username = body.username;
+        if (body.age) member.age = body.age;
+        console.log(members);
+        res.send({messsage: `Member with id ${id} has been updated`});
+    } else {
+        res.send({messsage: `Member with id ${id} not found`});
+    }
+})
+
+//delete all
+app.delete("/members", (req, res) => {
+    members.length = 0;
+    console.log(members);
+    res.send({messsage: `Members were deleted`});
+})
+
+//delete by id
+app.delete("/members/:memberId", (req, res) => {
+    let id = req.params.memberId;
+    let pos = getMemberPos(id);
+    console.log(pos);
+    if (pos !== undefined) {
+        members.splice(pos, 1);
+        console.log(members);
+        res.send({messsage: `Member with id ${id} has been deleted`});
+    } else {
+        res.send({messsage: `Member with id ${id} not found`});
+    }
+})
 
 /*
 //event handler, route handler, route
