@@ -10,28 +10,77 @@
 <body>
     <div class = "menu">
         <ul class = "menu menuList">
-            <li class="navButton"><a href="/index">Getting Started</a></li>
+            <li class="navButton"><a href="/">Getting Started</a></li>
             <li class="navButton"><a href="/json">JSON</a></li>
             <li class="navButton"><a href="/http">Rest API</a></li>
             <li class="navButton"><a href="/javascript">Javascript</a></li>
         </ul>
     </div>
-    <div class = "main">
+    <main>
+        <section class="major">
         <h1>Javascript</h1>
-            <h2>Const vs Let</h2>
-                <p>Const - cannot change value
-                    Let - can change value
+            <section class="minor">
+                <h2>Const vs Let</h2>
+                <p>
+                    <b>Const</b> - cannot change value<br>
+                    <b>Let</b> - can change value
                 </p>
-            <h2>Callback Functions</h2>
-            <h2>Loops</h2>
-            <p>for (item in array)
-                for (property of object)
-                array.forEach(() => {})
-                functional loops examples:
-                array.map((element) => element/function)
-                array.reduce((accumulator, element) => function);
-            </p>
-    </div>
+            </section>
+            <section class="minor">
+                <h2>Callback Functions</h2>
+            </section>
+            <section class="minor">
+                <h2>Loops</h2>
+                <p>for (item of array)<br>
+                    <pre>
+                        <code>
+                            const fruits = ["apples", "banana", "blueberries"];
+                            for (fruit of fruits) console.log(fruit);
+                        </code>
+                    </pre>
+                    for (property in object)<br>
+                    <pre>
+                        <code>
+                            let member = {
+                                username: "Lia",
+                                candies: 5
+                            };
+                            for (property in member) { console.log("property ", property, " value ", member[property]);}
+                        </code>
+                    </pre>
+                    array.forEach(() => {})<br>
+                    <pre>
+                        <code>
+                            fruits.forEach(fruit => console.log(fruit));
+                        </code>
+                    </pre>
+                    functional loops examples:<br>
+                    array.map((element) => element/function)<br>
+                    <pre>
+                        <code>
+                            const newFruit = fruits.map(fruit => fruit); //returns fruit
+                        </code>
+                    </pre>
+                    array.reduce((accumulator, element) => function);<br>
+                    <pre>
+                        <code>
+                            const members = [
+                                {
+                                    username: "Lia",
+                                    candies: 5
+                                }, 
+                                {
+                                    username: "Leon",
+                                    candies: 3
+                                }, 
+                            ];
+                            const sum = members.reduce((total, member) => total + member.candies, 0);
+                        </code>
+                    </pre>
+                </p>
+            </section>
+        </section>
+    </main>
     <footer>&copy; 4th Semester Node.js Mandatory Project Marianna Zimmermannova 2021</footer>
 </body>
 </html>

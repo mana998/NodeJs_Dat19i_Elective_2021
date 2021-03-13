@@ -1,11 +1,9 @@
-
-body {
-    /*
+/*
 #1E5631 #A4DE02 #76BA1B #4C9A2A #ACDF87 #68BB59
 */
 
 /*Body to get full width/height*/
-    /*Body to get full width/height*/
+html, body {
     margin: 0;
     padding: 0;
 }
@@ -74,11 +72,12 @@ footer {
 
 
 /*General*/
-.main {
+main {
     margin: 1em;
     padding: 4em 2em 1em;
     font-family: 'Roboto Condensed';
     font-weight: 300;
+    height: 100%;
 }
 
 h1 {

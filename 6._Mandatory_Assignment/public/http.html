@@ -6,55 +6,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Http</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+</head>
 <body>
     <div class = "menu">
         <ul class = "menu menuList">
-            <li class="navButton"><a href="/index">Getting Started</a></li>
+            <li class="navButton"><a href="/">Getting Started</a></li>
             <li class="navButton"><a href="/json">JSON</a></li>
             <li class="navButton"><a href="/http">Rest API</a></li>
             <li class="navButton"><a href="/javascript">Javascript</a></li>
         </ul>
     </div>
-    <div class = "main">
-        <h1>Rest API</h1>
-        <h1>HTTP Methods</h1>
-        <p>Sending data - path variable, query string</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Method\Endpoint</th>
-                    <th>\members</th>
-                    <th>\members\id</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>GET</td>
-                    <td>get all members</td>
-                    <td>get member by id</td>
-                </tr>
-                <tr>
-                    <td>POST</td>
-                    <td>add member</td>
-                    <td>add member by id**</td>
-                </tr>
-                <tr>
-                    <td>PUT/PATCH</td>
-                    <td>update all members*</td>
-                    <td>update member by id</td>
-                </tr>
-                <tr>
-                    <td>DELETE</td>
-                    <td>delete all members*</td>
-                    <td>delete member by id</td>
-                </tr>
-                * rarely used
-                ** not used
-            </tbody>
-        </table>
-        <h1>Postman</h1>
-        <p></p>
-    </div>
+    <main>
+        <section class="major"></section>
+            <h1>Rest API</h1>
+            <section class="minor">
+                <h2>REST</h2>
+                <p>Representational state transfer - architectural style for distributed hypermedia systems</p> 
+                <section class="minor">
+                    <h3>Principles</h3>
+                    <ul>
+                        <li>
+                            <h4>Client Server</h4>
+                            <p>Separate user interface from data storage. Client should only know resource URIs</p>
+                        </li>
+                        <li>
+                            <h4>Stateless</h4>
+                            <p>Server doesn't store information about previous HTTP requests from the client. Each request is treated as a new one.
+                                If application uses log in system, authorization token needs to be sent with every request.
+                            </p>
+                        </li>
+                        <li>
+                            <h4>Cacheable</h4>
+                            <p>Implemented on both server and client-side to improve performance</p>
+                        </li>
+                        <li>
+                            <h4>Uniform interface</h4>
+                            <p>API interface needs to be made public for customer. Should provide unchanging, standardized means of communication.</p>
+                        </li>
+                        <li>
+                            <h4>Layered system</h4>
+                            <p>Can contain multiple servers with different functionality and responsibility</p>
+                        </li>
+                        <li>
+                            <h4>Code on demand (optional)</h4>
+                            <p>Besides JSON, XML data, executable code can be returned</p>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section class="minor">
+                <h2>API</h2>
+                <p>Application programmin interface - enables data exchange between software products.<br>
+                One software calls API of another software specifying data requirements and the other software returns the data or functionality that was requested.
+                
+                </p>
+            </section>
+            <section class="minor">
+                <h2>RESTful API</h2>
+                <p>API which is based on REST. Typically uses HTTP.</p>
+            </section>
+        </section>
+        <section class="major"></section>
+            <h1>HTTP Methods</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method\Endpoint</th>
+                        <th>\members</th>
+                        <th>\members\id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>get all members</td>
+                        <td>get member by id</td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>add member</td>
+                        <td>add member by id**</td>
+                    </tr>
+                    <tr>
+                        <td>PUT/PATCH</td>
+                        <td>update all members*</td>
+                        <td>update member by id</td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>delete all members*</td>
+                        <td>delete member by id</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>* rarely used<br>** not used</p>
+            <section class="minor">
+                <h2>Implementation examples with Node</h2>
+                <p>Type of the method is always specified with the express app call. This function takes 2 parameters, where first one is endpoint and 
+                    2nd one callback function with request and response input parameters. Request is then processed and sent back with the app response call.
+                    There are multiple ways of passing data throug request and response parameters which will be explained below with concrete examples.
+                </p>
+                <section class="minor">
+                    <h3>GET</h3>
+                    <p>As mentioned above, we specify type of http method in the call. In this case it is app.get.
+                        There are 2 ways of sending data as a part of uri. We can include it as a path variable which is separated by a slash
+                        and symbolized with ":" in endpoint. We can then access it from the request as req.params.name.
+                        <pre>
+                            <code>
+                            app.get("/members/:id", (req, res) => {
+                                let id = req.params.id;
+                                let member = members.find(member => member.id === parseInt(id));
+                                res.send({found: member});
+                            });
+                            </code>
+                        </pre>
+                        Or we can pass data in forms of a query string which we separate from the main part of the uri by ? and then specify key-value pairs separated by &.
+                        We can then access it from the request as req.query.key.
+                        <pre>
+                            <code>
+                            app.get("/querystring", (req, res) => {
+                                res.send({"key" : req.query.key});
+                            })
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section class="minor">
+                    <h3>POST</h3>
+                    <p>Post method is used for sending data while hiding it from the user. It is not shown in the uri but passed in request body.
+                        We however need to use json parser to access the data through request.body.key.
+                        <pre>
+                            <code>
+                                app.use(express.json());
+                                app.post("/members", (req, res) => {
+                                    let member = new Member(id++, req.body.username, req.body.candies);
+                                    res.send({messsage: "Member has been added", member: member});
+                                });
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+            </section>
+        </section>
+        <section class="major"></section>
+            <h1>Postman</h1>
+            <p>Tool used for sending HTTP requests to the server. As our web browser is able to send only get requests by changing uri, it is a helpful tool for testing purposes. We can specify type of the request, path variables or query string and get a response with data back.</p>
+        </section>
+    </main>
     <footer>&copy; 4th Semester Node.js Mandatory Project Marianna Zimmermannova 2021</footer>
 </body>
 </html>
