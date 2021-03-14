@@ -28,17 +28,52 @@
             </section>
             <section class="minor">
                 <h2>Callback Functions</h2>
+                <p>Function passed into another function as an argument. It can be then executed right away or after some other commands
+                    <pre>
+                        <code>
+                            function sayHiLater(callbackFunction) {
+                                console.log("Doing something imporant");
+                                console.log("Loading");
+                                console.log("Almost done");
+                                callbackFunction();
+                            }
+                            //pass arrow function                            
+                            sayHiLater(() => {console.log("Hi")});
+                            /*
+                                output:
+                                Doing something important
+                                Loading
+                                Almost done
+                                Hi
+                            */
+
+                            //save arrow function into const
+                            const sayHi = () => {
+                                console.log("Hello!");
+                            }
+                            //pass const
+                            sayHiLater(sayHi);
+                            /*
+                                output:
+                                Doing something important
+                                Loading
+                                Almost done
+                                Hello!
+                            */
+                        </code>
+                    </pre>
+                </p>
             </section>
             <section class="minor">
                 <h2>Loops</h2>
-                <p>for (item of array)<br>
+                <p><b>for (item of array)</b> - loops through all items of array<br>
                     <pre>
                         <code>
                             const fruits = ["apples", "banana", "blueberries"];
                             for (fruit of fruits) console.log(fruit);
                         </code>
                     </pre>
-                    for (property in object)<br>
+                    <b>for (property in object)</b> - loops through all keys/properties of an object<br>
                     <pre>
                         <code>
                             let member = {
@@ -48,36 +83,46 @@
                             for (property in member) { console.log("property ", property, " value ", member[property]);}
                         </code>
                     </pre>
-                    array.forEach(() => {})<br>
+                    <b>array.forEach((element, index, array) => {})</b> Unlike in "for of" loop, we can specify additional index and array parameter<br>
                     <pre>
                         <code>
-                            fruits.forEach(fruit => console.log(fruit));
-                        </code>
-                    </pre>
-                    functional loops examples:<br>
-                    array.map((element) => element/function)<br>
-                    <pre>
-                        <code>
-                            const newFruit = fruits.map(fruit => fruit); //returns fruit
-                        </code>
-                    </pre>
-                    array.reduce((accumulator, element) => function);<br>
-                    <pre>
-                        <code>
-                            const members = [
-                                {
-                                    username: "Lia",
-                                    candies: 5
-                                }, 
-                                {
-                                    username: "Leon",
-                                    candies: 3
-                                }, 
-                            ];
-                            const sum = members.reduce((total, member) => total + member.candies, 0);
+                            fruits.forEach((fruit, index, array) => console.log(fruit, "index: ", index, "full array: ", array));
                         </code>
                     </pre>
                 </p>
+                <section class="minor">
+                    <h3>functional loops examples:</h3>
+                    <p><b>array.map((element) => element/function)</b> - function runs for each value and returns each value in a new array. We can either specify what modifications should happen with the value or simply return the whole or part of the original object.<br>
+                        <pre>
+                            <code>
+                                const newFruit = fruits.map(fruit => fruit); //returns fruit
+                            </code>
+                        </pre>
+                        <b>array.reduce((accumulator, element) => function);</b> - We have 2 parameters, accumulator and element. We can specify existing variable for an accumulator or specify its starting value as a 2nd parameter.
+                        After each run of the function, final value is stored in the accumulator and then the loop is run for another element. At the end we end up with a signle value returned.<br>
+                        <pre>
+                            <code>
+                                const members = [
+                                    {
+                                        username: "Lia",
+                                        candies: 10
+                                    }, 
+                                    {
+                                        username: "Leon",
+                                        candies: 3
+                                    }, 
+                                ];
+                                const sum = members.reduce((total, member) => total + member.candies, 0);
+                            </code>
+                        </pre>
+                        <b>array.filter(element => function);</b> - In the function, we specify a condition that must apply. If the return value is true, elemet is added into the new array, else it is discarded<br>
+                        <pre>
+                            <code>
+                                const aboveFive = members.filter((member) => member.candies > 5);
+                            </code>
+                        </pre>
+                    </p>
+                </section>
             </section>
         </section>
     </main>
