@@ -20,8 +20,25 @@
         <section class="major">
             <h1>JSON</h1>
             <p>Javascript Object Notation - file and data interchange format used for transmitting data objects consisting
-                of key-value pairs. : is used for separation of keys and values. Values can be simple values or other objects which can again hold
+                of key-value pairs.<br> <b>:</b> is used for separation of keys and values. Values can be simple values or other objects which can again hold
                 one or more key-value pairs.
+            </p>
+            <pre>
+<code>{
+    "scripts": {
+        "start-dev": "cross-env PORT=3000 nodemon.cmd ./app.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3"
+    }
+}</code>
+            </pre>
+            <p>Here we can see one object, which contains 3 key-value pairs separated by comma. Each key (scripts, dependencies, devDependencies) has
+                another object as a value. Each of these objects has only 1 key-value pair, but we can again include more just by separating them with a comma.<br>
+                For both keys and values, if we are using strings, they need to be enclosed by quotation marks "string".
             </p>
         </section>
     </main>
