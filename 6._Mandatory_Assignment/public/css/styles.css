@@ -90,3 +90,16 @@ h2 {
     font-weight: 500;
 }
 
+.half {
+    width: 48%;
+    display: inline;
+    padding: 1%;
+}
+
+.right{
+    float:right;
+}
+
+.left {
+    float: left;
+}
