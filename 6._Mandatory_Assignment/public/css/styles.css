@@ -83,6 +83,7 @@ main {
 h1 {
     font-family: 'Roboto';
     font-weight: 550;
+    font-size: 2em;
 }
 
 h2 {
@@ -94,6 +95,7 @@ h2 {
     width: 48%;
     display: inline;
     padding: 1%;
+    margin-block: 0;
 }
 
 .right{
