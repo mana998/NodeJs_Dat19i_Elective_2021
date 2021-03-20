@@ -20,9 +20,8 @@ app.get("/javascript", (req, res) => {
     res.sendFile(__dirname + "/public/javascript.html");
 })
 
-
-app.get("/dangerport", (req, res) => {
-    res.redirect("/safeport");
+app.get("/jquery", (req, res) => {
+    res.sendFile(__dirname + "/public/jquery.html");
 })
 
 const PORT = process.env.PORT || 8080;
