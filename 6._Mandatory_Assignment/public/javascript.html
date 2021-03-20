@@ -84,7 +84,7 @@
                     </pre>
                 </p>
                 <section class="minor">
-                    <h3>functional loops examples:</h3>
+                    <h3>Functional loops examples:</h3>
                     <p><b>array.map((element) => element/function)</b> - function runs for each value and returns each value in a new array. We can either specify what modifications should happen with the value or simply return the whole or part of the original object.<br>
                         <pre>
                             <code>
@@ -92,7 +92,7 @@
                             </code>
                         </pre>
                         <b>array.reduce((accumulator, element) => function);</b> - We have 2 parameters, accumulator and element. We can specify existing variable for an accumulator or specify its starting value as a 2nd parameter.
-                        After each run of the function, final value is stored in the accumulator and then the loop is run for another element. At the end we end up with a signle value returned.<br>
+                        After each run of the function, final value is stored in the accumulator and then the loop is run for another element. At the end we end up with a single value returned.<br>
                         <pre>
                             <code>
                                 const members = [
@@ -108,7 +108,7 @@
                                 const sum = members.reduce((total, member) => total + member.candies, 0);
                             </code>
                         </pre>
-                        <b>array.filter(element => function);</b> - In the function, we specify a condition that must apply. If the return value is true, elemet is added into the new array, else it is discarded<br>
+                        <b>array.filter(element => function);</b> - In the function, we specify a condition that must apply. If the return value is true, elemet is added into the new array, else it is discarded.<br>
                         <pre>
                             <code>
                                 const aboveFive = members.filter((member) => member.candies > 5);
