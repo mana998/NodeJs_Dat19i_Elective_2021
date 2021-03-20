@@ -4,6 +4,7 @@ const menu = `<div class = "menu">
     <li class="navButton"><a href="/json">JSON</a></li>
     <li class="navButton"><a href="/http">Rest API</a></li>
     <li class="navButton"><a href="/javascript">Javascript</a></li>
+    <li class="navButton"><a href="/jquery">jQuery</a></li>
 </ul>
 </div>`;
 
