@@ -89,6 +89,16 @@ npm init</code>
                     <li><code>nodemon[.cmd] app.js</code> - automatically restarts when change occurs</li>
                 </ol>
             </section>
+            <section class="minor">
+                <h2>Including external files</h2>
+                <p>First we need to specify external folder from where we want our static files served. Due to the security reasons, 
+                    we don't want client to have access to all our files. We then specify paths to other resources in relation to our static folder.
+                </p>
+                <pre>
+    <code>app.use(express.static(__dirname + '/public'));</code>
+                </pre>
+            </section>
+        </section>
         <section class="major">
             <h1 id="packages">Packages</h1>
             <section class="minor"></section>
