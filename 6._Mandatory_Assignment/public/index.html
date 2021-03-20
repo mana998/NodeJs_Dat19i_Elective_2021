@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <div class="content">
     <main>
         <section class="major">
             <h1>Getting Started</h1>
@@ -73,17 +77,17 @@ npm init</code>
                         <pre>
     <code>const PORT = process.env.PORT || 8080;
 
-    app.listen(PORT, (error) => {
-        if (error) {
-            console.log(error);
-        }
-        console.log("Server is running on port", Number(PORT));
-    });</code>
+app.listen(PORT, (error) => {
+    if (error) {
+        console.log(error);
+    }
+    console.log("Server is running on port", Number(PORT));
+});</code>
                         </pre>
                     </li>
                 </ol>
             </section>
-            <section class="minor"></section>
+            <section class="minor">
                 <h2>Running the project</h2>
                 <ol>
                     <li><code>node</code> - opens REPL prompt (read, evaluate, print, loop) - for executing commands</li>
@@ -108,9 +112,9 @@ npm init</code>
                 <p>Helps with HTTP servers and HTTP APIs. Set up explained in <a href="#setupServer">Settin up the server</a></p>
                 <p>To serve html pages, we need to specify absolute path to the file. We can use the global variable <code>__dirname</code> to get absolute path to where it was called from. We can then send it like this:
                     <pre>
-    <code>app.get("/", (req, res) => {
-        res.sendFile(__dirname + "/public/index.html");
-    })</code>
+<code>app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html");
+})</code>
                     </pre>
                 </p>
             </section>
@@ -132,7 +136,13 @@ npm init</code>
         </section>
         <section class="major">
             <h1>Build tools</h1>
-            <table>
+            <table class="build">
+                <colgroup>
+                    <col class="first-column">
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
                 <thead>
                     <tr>
                         <th></th>
@@ -196,6 +206,7 @@ npm init</code>
             </table>
         </section>   
     </main>
+    </div>
     <script src="./js/scripts.js"></script>
 </body>
 </html>

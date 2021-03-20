@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <main>   
-        <section class="major">
-            <h1>JSON</h1>
-            <p>Javascript Object Notation - file and data interchange format used for transmitting data objects consisting
-                of key-value pairs.<br> <b>:</b> is used for separation of keys and values. Values can be simple values or other objects which can again hold
-                one or more key-value pairs.
-            </p>
-            <pre>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <div class="content">
+        <main>   
+            <section class="major">
+                <h1>JSON</h1>
+                <p>Javascript Object Notation - file and data interchange format used for transmitting data objects consisting
+                    of key-value pairs.<br> <b>:</b> is used for separation of keys and values. Values can be simple values or other objects which can again hold
+                    one or more key-value pairs.
+                </p>
+                <pre>
 <code>{
     "scripts": {
         "start-dev": "cross-env PORT=3000 nodemon.cmd ./app.js"
@@ -28,13 +32,14 @@
         "cross-env": "^7.0.3"
     }
 }</code>
-            </pre>
-            <p>Here we can see one object, which contains 3 key-value pairs separated by comma. Each key (scripts, dependencies, devDependencies) has
-                another object as a value. Each of these objects has only 1 key-value pair, but we can again include more just by separating them with a comma.<br>
-                For both keys and values, if we are using strings, they need to be enclosed by quotation marks "string".
-            </p>
-        </section>
-    </main>
+                </pre>
+                <p>Here we can see one object, which contains 3 key-value pairs separated by comma. Each key (scripts, dependencies, devDependencies) has
+                    another object as a value. Each of these objects has only 1 key-value pair, but we can again include more just by separating them with a comma.<br>
+                    For both keys and values, if we are using strings, they need to be enclosed by quotation marks "string".
+                </p>
+            </section>
+        </main>
+    </div>
     <script src="./js/scripts.js"></script>
 </body>
 </html>
