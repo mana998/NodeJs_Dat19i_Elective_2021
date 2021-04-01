@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Prices</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <h1>Real-time Crypto Prices</h1>
+
+    <div>
+        <h3>Bitcoin</h3>
+        <p id="bitcoin-price"></p>
+    </div>
+
+    <div>
+        <h3>Ethereum</h3>
+        <p id="ethereum-price"></p>
+    </div>
+
+    <script>
+        fetch('https://api.coinlore.net/api/ticker/?id=90')
+        .then(response => response.json())
+        .then(result => {
+            $("#bitcoin-price").text(result[0].price_usd);
+        });
+
+        /*fetch('https://api.coinlore.net/api/ticker/?id=80')
+        .then(response => response.json())
+        .then(result => {
+            $("#ethereum-price").text(result[0].price_usd);
+        });*/
+
+        //bonus task: convert the above with async/await
+
+        (async function() {
+            const response = await fetch('https://api.coinlore.net/api/ticker/?id=80');
+            const result = await response.json();
+            $("#ethereum-price").text(result[0].price_usd);
+        })()
+        
+        
+
+        /*$.get('https://api.coinlore.net/api/ticker/?id=90', (data) => {
+            console.log("Data from get: ",data);
+        })
+
+        $.get('https://api.coinlore.net/api/ticker/?id=80', (data) => {
+            const ethParagraph = document.getElementById("ethereum-price");
+            ethParagraph.innerText = "$" + data[0].price_usd;
+        })
+
+        $.getJSON('https://api.coinlore.net/api/ticker/?id=90', (data) => {
+            console.log("Data from getJSON: ",data);   
+        })
+
+        $.ajax({
+            url:  "https://api.coinlore.net/api/ticker/?id=90",
+            dataType: 'json',
+            success: function(result){
+                console.log(result);
+                $("#bitcoin-price").text(result[0].price_usd);
+            }
+        })
+
+        $.ajax({
+            url:  "https://api.coinlore.net/api/ticker/?id=80",
+            dataType: 'json',
+            success: function(result){
+                //$("#ethereum-price").text(result[0].price_usd);
+            }
+        })*/
+    </script>
+</body>
+</html>
