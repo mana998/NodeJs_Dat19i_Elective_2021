@@ -27,14 +27,14 @@ function getMemberPos(id) {
 
 //get all
 app.get("/members", (req, res) => {
-    res.send(members);
+    res.send({members : members});
 });
 
 //get by id
 app.get("/members/:memberId", (req, res) => {
     let id = req.params.memberId;
     let pos = getMemberPos(id);
-    res.send(members[pos] ? members[pos] : {message: `No member found with id ${id}`});
+    res.send(members[pos] ? {member: members[pos]} : {message: `No member found with id ${id}`});
 });
 
 //post
