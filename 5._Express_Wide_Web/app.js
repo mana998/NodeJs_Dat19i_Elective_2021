@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+const fetch = require('node-fetch');
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 
@@ -22,6 +22,15 @@ app.get("/safeport", (req, res) => {
 
 app.get("/dangerport", (req, res) => {
     res.redirect("/safeport");
+})
+
+app.get("/proxy", (req, res) => {
+    fetch('https://google.com/')
+        .then(res => res.text())
+        .then(body => res.send(body))
+        .catch(res => {
+            console.log("error",res);
+        });
 })
 
 app.get("/potato", (req, res) => {
