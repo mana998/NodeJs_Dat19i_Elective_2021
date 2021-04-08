@@ -26,7 +26,8 @@ app.get("/dangerport", (req, res) => {
 
 app.get("/proxy", (req, res) => {
     fetch('https://google.com/')
-        .then(res => res.text())
+        //.then(res => res.text())
+        .then(res => res.textConverted())
         .then(body => res.send(body))
         .catch(res => {
             console.log("error",res);
