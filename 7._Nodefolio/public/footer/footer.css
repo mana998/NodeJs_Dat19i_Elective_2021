@@ -1,0 +1,15 @@
+/*Footer*/
+#footer-about {
+    border-top: 1px solid #3b3b3b;
+    background-color: #3f3f3f;
+    color: #b6b6b6;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /*Center horizontaly and vertically*/
+    text-align: center;
+    height: 4em;
+    line-height: 4em;
+    /*margin-top: -4em;*/
+}
