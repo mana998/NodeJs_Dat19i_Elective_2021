@@ -1,0 +1,30 @@
+/*Body to get full width/height*/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+main {
+    margin-top: 4em;
+    padding: 2em;
+    min-height: calc(100vh - 12em);
+}
+
+h1 {
+    color:#3b3b3b;
+    font-family: Helvetica, sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 0;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
