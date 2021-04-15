@@ -1,0 +1,62 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5em;
+}
+
+.grid-item {
+    background-color: none;
+    /*align-self: center;/*?*/
+}
+
+.grid-item.description {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-color: blue;
+}
+
+.grid-container .grid-item.picture {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin-right: 0;
+}
+
+/*Alter between positions
+Image/Text on the Left/Right*/
+article:nth-of-type(even) div.grid-item.description {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 1;
+    background-color: rgb(109, 68, 68);
+}
+
+article:nth-of-type(even) img.grid-item.picture {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row: 1;
+    margin-left: auto;
+}
+
+/*
+.skill-link {
+    width: 100%;
+    margin: auto;
+    display: block;
+}*/
+
+.project-img {
+    display: block;
+    height: 15em;
+}
+
+.mini-icon {
+    width: 2em;
+    height: auto;
+    margin: 0 0.5em;
+}
+
+.project-name {
+    display: inline-block;
+    margin: 0.5em 0.5em 0.5em 0;
+    margin-block-start: 0;
+}
