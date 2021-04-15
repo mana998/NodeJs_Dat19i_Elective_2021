@@ -56,7 +56,7 @@ router.get("/api/projects", (req, res) => {
         const filteredProjects = projects.filter(project => 
             project.tags.includes(filter)
         )
-        res.send({projects: filteredProjects});
+        projects = filteredProjects;
     }
     res.send({projects});
 })
