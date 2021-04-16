@@ -1,0 +1,48 @@
+.banner {
+    background-image: url("./img/unnamed.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode:screen;
+    min-height: calc(100vh - 4em);
+}
+
+main {
+    padding: 0;
+}
+
+.logo {
+    width: 3em;
+    height: auto;
+}
+
+.logo-link {
+    margin: 0.5em;
+}
+
+.info-container {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: auto;
+    padding-right: auto;
+    text-align: center;
+}
+
+h1 {
+    color: #f8f8f8;
+}
+
+h2 {
+    color: #f8f8f8;
+    text-align: center;
+}
+
+hr {
+    color: #f8f8f8;
+}
+
+.skills, .projects{
+    margin: 2em;
+}

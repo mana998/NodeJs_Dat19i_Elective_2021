@@ -8,14 +8,19 @@ function generateSkill(name){
 </div>`);
 }
 
-(async function renderSkill() {
-    const response = await fetch("/api/skills");
+async function renderSkills(max) {
+    let fetchString = "/api/skills";
+    if (max) fetchString += `?max=${max}`;
+    const response = await fetch(fetchString);
     const result = await response.json();
-    console.log(result);
     if (result.skills) {
         result.skills.map(skill => {
-            console.log(skill);
             $(".flex-container").append(generateSkill(skill));
         });
     }
-})();
+};
+
+//render skills automatically if on skills page
+if (window.location.pathname.match("skills")) {
+    renderSkills();
+}

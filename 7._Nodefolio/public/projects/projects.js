@@ -11,17 +11,24 @@ function generateProject(project){
 </article>`);
 }
 
-(async function renderProjects() {
+async function renderProjects(max, append) {
+    append = append || "main";
     let filter = window.location.search;
     const filterRegex = /\?filter=(.*[^&=])/;
     filter = (filter.replace(filterRegex, "$1"));
-    const fetchString = filter ? `/api/projects?filter=${filter}` : "/api/projects";
+    let fetchString = "/api/projects";
+    if (filter) fetchString += `?filter=${filter}`;
+    if (max) fetchString += filter ? `&max=${max}` : `?max=${max}`;
     const response = await fetch(fetchString);
     const result = await response.json();
     if (result.projects) {
         result.projects.map(project => {
-            $("main").append(generateProject(project));
+            $(append).append(generateProject(project));
         });
     }
-})();
+};
 
+//render projects automatically if on projects page
+if (window.location.pathname.match("projects")) {
+    renderProjects();
+}

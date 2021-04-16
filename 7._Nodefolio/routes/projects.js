@@ -11,7 +11,8 @@ class Project {
     }
 }
 
-let projects = [
+//depending on parameters, modified array will be returned, but original one must remain unchanged
+const projectsArr = [
     new Project(
         "Binary Clock", 
         `Simple canvas application to show real-time in binary separated into hours, minutes and seconds. 
@@ -51,12 +52,17 @@ let projects = [
 ];
 
 router.get("/api/projects", (req, res) => {
+    let projects = [...projectsArr];
     let filter = req.query.filter;
+    let max = req.query.max;
     if (filter) {
         const filteredProjects = projects.filter(project => 
             project.tags.includes(filter)
         )
         projects = filteredProjects;
+    }
+    if (max && projects.length > max){
+        projects.length = max;
     }
     res.send({projects});
 })

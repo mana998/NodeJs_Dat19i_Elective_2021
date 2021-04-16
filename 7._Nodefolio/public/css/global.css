@@ -21,6 +21,10 @@ h1 {
     margin-top: 0;
 }
 
+h2 {
+    font-family: Helvetica, sans-serif;
+}
+
 .left {
     float: left;
 }

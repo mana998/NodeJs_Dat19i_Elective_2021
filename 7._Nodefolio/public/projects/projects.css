@@ -2,17 +2,20 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 5em;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.grid-container:last-child {
+    border-bottom: none;
 }
 
 .grid-item {
     background-color: none;
-    /*align-self: center;/*?*/
 }
 
 .grid-item.description {
     grid-column-start: 2;
     grid-column-end: 4;
-    background-color: blue;
 }
 
 .grid-container .grid-item.picture {
@@ -27,7 +30,6 @@ article:nth-of-type(even) div.grid-item.description {
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row: 1;
-    background-color: rgb(109, 68, 68);
 }
 
 article:nth-of-type(even) img.grid-item.picture {
