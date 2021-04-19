@@ -1,5 +1,4 @@
 const router = require("express").Router();
-"use strict";
 const nodemailer = require("nodemailer");
 const dotenv = require('dotenv');
 dotenv.config();
@@ -18,7 +17,7 @@ async function main(body) {
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: `"${body.firstName} ${body.lastName}" <${body.email}>`, // sender address
+    from: `"${body.name}" <${body.email}>`, // sender address
     to: process.env.EMAIL, // list of receivers
     subject: body.subject, // Subject line
     text: `${body.message} \n\nFrom: ${body.email}`, // plain text body
