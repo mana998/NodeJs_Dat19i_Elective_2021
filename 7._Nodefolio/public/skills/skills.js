@@ -2,7 +2,7 @@ function generateSkill(name){
     return(
     `<div class="flex-item">
     <a class="skill-link" href="/projects?filter=${name.toLowerCase()}">
-        <img class="skill-img" src="/skills/img/${name.toLowerCase()}.png">
+        <img class="skill-img" src="/skills/img/${name.toLowerCase()}.svg">
         <h2 class="skill-name">${name}</h2>
     </a>
 </div>`);
@@ -13,10 +13,12 @@ async function renderSkills(max) {
     if (max) fetchString += `?max=${max}`;
     const response = await fetch(fetchString);
     const result = await response.json();
-    if (result.skills) {
+    if (result.skills.length) {
         result.skills.map(skill => {
             $(".flex-container").append(generateSkill(skill));
         });
+    } else {
+        $(append).append("<h2>No skillts found</h2>");
     }
 };
 
