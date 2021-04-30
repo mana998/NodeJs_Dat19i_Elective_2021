@@ -25,6 +25,8 @@
   "homepage": "https://github.com/mana998/NodeJs_Dat19i_Elective_2021#readme",
   "dependencies": {
     "cross-env": "^7.0.3",
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.5.0"
   }
 }

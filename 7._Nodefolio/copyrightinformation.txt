@@ -1,0 +1,17 @@
+CC0:
+
+https://iconify.design/icon-sets/logos/neo4j.html
+https://iconify.design/icon-sets/logos/linkedin-icon.html
+https://iconify.design/icon-sets/logos/jquery.html
+https://iconify.design/icon-sets/logos/github-icon.html
+
+MIT:
+https://iconify.design/icon-sets/akar-icons/play.html
+
+Unlicensed:
+https://iconify.design/icon-sets/system-uicons/menu-hamburger.html
+
+https://icons8.com/icon/pack/logos/color
+
+GNU:
+https://www.gnu.org/software/trans-coord/manual/cvs/cvs.html

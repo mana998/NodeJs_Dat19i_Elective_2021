@@ -1,0 +1,119 @@
+.banner {
+    background-image: url("./img/banner.png");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode:screen;
+    min-height: calc(100vh - 4em);
+}
+
+main {
+    padding: 0;
+}
+
+.logo {
+    width: 3em;
+    height: auto;
+    filter: grayscale(100%) brightness(0%) contrast(100%);
+}
+
+.logo:hover {
+    filter: grayscale(100%) brightness(0%) invert(75%);
+}
+
+.logo-link {
+    margin: 0.5em;
+}
+
+.info-container {
+    display: inline-block;
+    position: absolute;
+    padding: 1em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: auto;
+    padding-right: auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-blend-mode:screen;
+    box-shadow: .5em .5em 1em rgba(0, 0, 0, 0.384);
+    text-shadow: .2em .2em 0.2em rgba(0, 0, 0, 0.384);
+}
+
+.banner h1 {
+    color: #f8f8f8;
+    margin: 1em;
+}
+
+.banner h2 {
+    color: #f8f8f8;
+    text-align: center;
+}
+
+hr {
+    color: #f8f8f8;
+    border:none;
+    border-bottom-color: #f8f8f8;
+    border-bottom-width: 0.1em;
+    border-bottom-style: solid;
+
+}
+
+.skills, .projects{
+    margin: 2em 2em 5em;
+}
+
+.grid-container:last-of-type {
+    border-bottom: none;
+}
+
+.more-link {
+    margin-left: 75%;
+}
+
+.more-button {
+    color:#E9E9E9;
+    background: #3b3b3b;
+    border: 1px solid #E9E9E9;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    padding: .75em 1.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.more-button:hover {
+    color:#3b3b3b;
+    background: #E9E9E9;
+    transition: 0.25s;
+}
+
+section {
+    margin-bottom: 5em;
+}
+
+@media (max-width:720px) {
+    /*-4em to ignore original margin*/
+    .more-link {
+        margin-left: calc(50% - 4em);
+    }
+
+}
+
+@media (max-width:640px) {
+
+    .info-container {
+        width: fit-content;
+    }
+
+    .name {
+        display: none;
+    }
+
+    hr {
+        display: none;
+    }
+}

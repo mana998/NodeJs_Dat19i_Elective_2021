@@ -8,18 +8,21 @@
     <link rel="stylesheet" type="text/css" href="/css/global.css"/>
     <link rel="stylesheet" type="text/css" href="/header/header.css"/>
     <link rel="stylesheet" type="text/css" href="/footer/footer.css"/>
+    <script src="/header/header.js"></script>
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <nav class="navbar">
-        <a href="/"><img class="left nav-button" id="logo" src="https://cdn.iconscout.com/icon/free/png-512/sentiment-satisfied-1780861-1514176.png"></a>
+        <a href="/"><img class="left nav-button" id="logo" src="/header/img/zm.svg"></a>
+        <img class="left nav-button" id="hamburger" src="/header/img/hamburger.svg" onClick="toggleMenu()"></a>
         <ul class="center menu-list" id="menu">
-            <a href="/skills"><li class="left nav-button">SKILLS</li></a>
-            <a href="/projects"><li class="left nav-button">PROJECTS</li></a>
-            <a href="/contact"><li class="left nav-button">CONTACT</li></a>
-            <a href="/about"><li class="left nav-button">ABOUT</li></a>
+            <a href="/" ><li id="title" class="left nav-button">Marianna Zimmermannova Portfolio</li></a>
+            <a href="/"><li class="left nav-button toggleable">HOME</li></a>
+            <a href="/skills"><li class="left nav-button toggleable">SKILLS</li></a>
+            <a href="/projects"><li class="left nav-button toggleable">PROJECTS</li></a>
+            <a href="/contact"><li class="left nav-button toggleable">CONTACT</li></a>
         </ul>
-        <a href="https://github.com/mana998" class="right nav-button"><img class="menu-icon" src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"></a>
-        <a href="https://www.linkedin.com/in/marianna-zimmermannov%C3%A1-167779193/" class="right nav-button"><img class="menu-icon" src="https://logoeps.com/wp-content/uploads/2014/09/49068-linkedin-logo-icon-vector-icon-vector-eps.png"></a>
+        <a href="https://github.com/mana998" class="right nav-button"><img class="menu-icon" src="/skills/img/github.svg"></a>
+        <a href="https://www.linkedin.com/in/marianna-zimmermannov%C3%A1-167779193/" class="right nav-button"><img class="menu-icon" src="/header/img/linkedin.svg"></a>
     </nav>
     <main>

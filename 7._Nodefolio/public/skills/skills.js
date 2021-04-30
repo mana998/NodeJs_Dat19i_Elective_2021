@@ -1,19 +1,28 @@
-const generateSkill = function(name){
+function generateSkill(name){
     return(
     `<div class="flex-item">
     <a class="skill-link" href="/projects?filter=${name.toLowerCase()}">
-        <img class="skill-img" src="/skills/img/${name.toLowerCase()}.png">
+        <img class="skill-img" src="/skills/img/${name.toLowerCase()}.svg">
         <h2 class="skill-name">${name}</h2>
     </a>
 </div>`);
 }
 
-//export function for creating skill components to follow SSR
-//else it would be CSR after JS loads in the browser
-module.exports = generateSkill;
+async function renderSkills(max) {
+    let fetchString = "/api/skills";
+    if (max) fetchString += `?max=${max}`;
+    const response = await fetch(fetchString);
+    const result = await response.json();
+    if (result.skills.length) {
+        result.skills.map(skill => {
+            $(".flex-container").append(generateSkill(skill));
+        });
+    } else {
+        $(append).append("<h2>No skillts found</h2>");
+    }
+};
 
-/*let skills = ["Java", "Java Spring", "JavaScript", "React", "Node", "HTML", "CSS", "MySQL", "Perl", "C", "Pascal", "PHP", "Python", "Git", "CVS", "AWS", "Docker", "Jenkins", "MongoDB", "Neo4j" ];
-
-for (let skill of skills) {
-    $(".flex-container").append(generateSkill(skill));
-}*/
+//render skills automatically if on skills page
+if (window.location.pathname.match("skills")) {
+    renderSkills();
+}

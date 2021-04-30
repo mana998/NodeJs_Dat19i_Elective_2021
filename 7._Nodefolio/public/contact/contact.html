@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="/contact/contact.css"/>
+<h1>Contact Me</h1>
+<form method="POST" action="/api/contact">
+    <label for="name">Name:</label><br>
+    <input class="text-input" type="text" maxlength="64" pattern="(\p{Upper}(\p{Lower})+ ?)+" title="Each word must start with a capital letter followed by lowercase letters separated by space. i.e. John Smith" id="name" name="firstName" required="required" placeholder="Name"><br>
+    <label for="email">Email:</label><br>
+    <input class="text-input" type="email" maxlength="45" id="email" name="email" required="required" placeholder="username@domain.com"><br>
+    <label for="subject">Subject:</label><br>
+    <input class="text-input" type="text" maxlength="40" id="subject" name="subject" required="required" placeholder="Subject"><br>
+    <label for="message">Message:</label><br>
+    <textarea class="text-input" type="text" id="message" name="message" placeholder="Message"></textarea><br>
+    <button type="submit" title="submit">Contact Me</button>
+</form>
