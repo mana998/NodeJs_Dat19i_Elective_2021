@@ -97,7 +97,18 @@ section {
 
 @media (max-width:640px) {
     .more-link {
-
         margin: 6em;
+    }
+
+    .info-container {
+        width: fit-content;
+    }
+
+    .name {
+        display: none;
+    }
+
+    hr {
+        display: none;
     }
 }

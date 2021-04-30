@@ -34,7 +34,7 @@
     text-align: center;
 }
 
-a {
+.flex-container a {
     font-family: Helvetica, sans-serif;
     text-decoration: none;
     color: #303131;
