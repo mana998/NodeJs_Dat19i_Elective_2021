@@ -14,15 +14,6 @@ class Project {
 //depending on parameters, modified array will be returned, but original one must remain unchanged
 const projectsArr = [
     new Project(
-        "Binary Clock", 
-        `Simple canvas application to show real-time in binary separated into hours, minutes and seconds. 
-    Size can be adjusted by pressing <b>+</b> or <b>-</b> key on a keyboard.`,
-        "https://github.com/mana998/Creative_Code_Dat19i_Elective_2021/tree/main/1._Canvas_Basics/Clock", 
-        "https://mana998.github.io/", 
-        "binary_clock",
-        ["html", "css", "javascript", "git", "github"]
-    ),
-    new Project(
         "Memory SpriteSheet Game", 
         `Testing Game Loop with using SpriteSheets to create simple game. At the beginning player chooses difficulty
         which sets amount of different objects to collect. Then at the beginning of each turn, order is shown for certain period 
@@ -44,6 +35,15 @@ const projectsArr = [
         "https://nordic-motorhome.herokuapp.com/", 
         "nordic_motorhome",
         ["html", "css", "javascript", "spring boot", "thymeleaf", "mysql", "git", "github", "up", "spring security"]
+    ),
+    new Project(
+        "Binary Clock", 
+        `Simple canvas application to show real-time in binary separated into hours, minutes and seconds. 
+    Size can be adjusted by pressing <b>+</b> or <b>-</b> key on a keyboard.`,
+        "https://github.com/mana998/Creative_Code_Dat19i_Elective_2021/tree/main/1._Canvas_Basics/Clock", 
+        "https://mana998.github.io/", 
+        "binary_clock",
+        ["html", "css", "javascript", "git", "github"]
     ),
     new Project(
         "Onward Delivery", 
