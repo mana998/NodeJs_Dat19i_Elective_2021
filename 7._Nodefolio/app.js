@@ -41,12 +41,6 @@ app.get("/contact", (req, res) => {
     res.send(header + contact + footer);
 })
 
-app.get("/about", (req, res) => {
-    res.send(header + frontpage + footer);
-})
-
-
-
 
 const server = app.listen(process.env.PORT || 8080, (error) => {
     if (error) {
