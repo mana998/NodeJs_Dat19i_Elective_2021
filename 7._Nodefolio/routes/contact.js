@@ -24,14 +24,14 @@ async function main(body) {
     //html: "<b>Hello world?</b>", // html body
   });
 
-  console.log("Message sent: %s", info.messageId);
+  //console.log("Message sent: %s", info.messageId);
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
 }
 
 router.post("/api/contact", (req, res) => {
-    console.log(req.body);
     main(req.body).catch(console.error);
+    //console.log(console.error);
     res.redirect("/");
 })
 
