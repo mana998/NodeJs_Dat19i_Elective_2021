@@ -21,6 +21,7 @@ button[type="submit"] {
     transition:none;
     width: 100%;
     margin: 1em 0em;
+    transition: 0.25s;
 }
 
 input[type="text"], input[type="email"], textarea {
@@ -36,20 +37,25 @@ input[type="text"], input[type="email"], textarea {
     transition: ease-in-out .35s;
 }
 
-input:focus{
+input:focus, textarea:focus {
     outline: none;
     border-bottom: 1px solid #303131;
 }
 
-input:hover{
+input:hover, textarea:hover {
     border: none;
     border-bottom: 1px solid #303131;
 }
 
-button[type="submit"]:hover{
+button[type="submit"]:hover {
     border: 1px solid #E9E9E9;
+    background-color: #3b3b3b;
+    color: #E9E9E9;
+    transition: 0.25s;
+    cursor: pointer;
 }
 
-button[type="submit"]:focus{
+button[type="submit"]:focus {
     outline: none;
+    
 }

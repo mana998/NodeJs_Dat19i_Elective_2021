@@ -33,3 +33,9 @@
 .skill-name{
     text-align: center;
 }
+
+a {
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+    color: #303131;
+}
