@@ -72,6 +72,27 @@ article:nth-of-type(even) img.grid-item.picture {
     filter: grayscale(100%) brightness(0%) invert(75%);
 }
 
+.tags {
+    margin-top: 3em;
+}
+
+.tag {
+    background-color: #f8f8f8;
+    text-decoration: none;
+    color: #303131;
+    padding:0.5em;
+    border-radius: 1em;
+    transition: 0.25s;
+    line-height: 3em;
+    margin: 0.25em;
+}
+
+.tag:hover {
+    background-color: #b6b6b6;
+    color: #f8f8f8;
+    transition: 0.25s;
+}
+
 @media (max-width:1024px) {
     .grid-container {
         grid-template-columns: 1fr;

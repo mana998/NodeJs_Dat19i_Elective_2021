@@ -1,14 +1,19 @@
 function generateProject(project){
-    return(
-    `<article class="grid-container">
+    let element = `<article class="grid-container">
     <a href="/projects/img/${project.img}.png" target="none"><img class="grid-item picture project-img" src="/projects/img/${project.img}.png"></a>
     <div class="grid-item description">
         <h2 class="project-name">${project.title}</h2>
         <a href="${project.gitURL}" target="_blank" class="icon-link"><img class="mini-icon" src="/skills/img/github.svg"></a>
         <a href="${project.deployURL}" target="_blank" class="icon-link"><img class="mini-icon" src="/projects/img/play.svg"></a>
         <p>${project.description}</p>
-    </div>
-</article>`);
+        <p class="tags">`;
+    project.tags.map((tag) => {
+        element += `<a href="/projects?filter=${tag}" class="tag">${tag}</a> `;
+    })
+        element += `</p>
+        </div>
+        </article>`
+    return element
 }
 
 async function renderProjects(max, append) {
