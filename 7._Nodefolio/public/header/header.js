@@ -4,6 +4,7 @@ function toggleMenu(togglePassed) {
     console.log("TogglePassed",togglePassed);
     console.log("Toggle",toggle);
     toggle = (typeof togglePassed !== 'undefined') ? togglePassed : !toggle;
+    
     console.log("Toggle",toggle);
     if (toggle) {
         $(".toggleable").show()
@@ -22,5 +23,9 @@ window.addEventListener("resize", () => {
 })
 
 window.addEventListener("load", () => {
-    toggleMenu(false);
+    if (window.innerWidth > 640) {
+        toggleMenu(true);
+    } else {
+        toggleMenu(false);
+    }
 })
