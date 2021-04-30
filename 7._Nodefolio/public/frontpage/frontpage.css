@@ -68,7 +68,7 @@ hr {
 }
 
 .more-link {
-    margin-left: 75em;
+    margin-left: 75%;
 }
 
 .more-button {
@@ -95,10 +95,15 @@ section {
     margin-bottom: 5em;
 }
 
-@media (max-width:640px) {
+@media (max-width:720px) {
+    /*-4em to ignore original margin*/
     .more-link {
-        margin: 6em;
+        margin-left: calc(50% - 4em);
     }
+
+}
+
+@media (max-width:640px) {
 
     .info-container {
         width: fit-content;
