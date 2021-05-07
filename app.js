@@ -41,6 +41,10 @@ app.get("/contact", (req, res) => {
     res.send(header + contact + footer);
 })
 
+app.get("/resume", (req, res) => {
+    res.download(__dirname + '/public/resume/resume.pdf');
+})
+
 
 const server = app.listen(process.env.PORT || 8080, (error) => {
     if (error) {
